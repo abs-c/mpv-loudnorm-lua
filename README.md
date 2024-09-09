@@ -8,7 +8,7 @@ Save the measured results into txt for reuse. A unique profile name for each fil
 
 ## Usage
 
-Put the `loudnorm` folder in mpv script folder (`scripts`). The existed profile is just an example and can be deleted, but the `data` folder should not be deleted, because I didn't write any script to regenerate it.
+Put the `loudnorm` folder in mpv script folder (`scripts`). The existed profile `xxx.txt` is just an example and can be deleted, but the `data` folder should not be deleted, because I didn't write any script to regenerate it.
 
 By default, the script will run when opening videos in `Y:` and `Z:`, which is a very personal behavior and can be modified in `main.lua`. You may also add something like `n script-message 2pass-loudnorm` to `input.conf` for manual execution.
 
