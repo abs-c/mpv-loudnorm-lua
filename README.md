@@ -15,3 +15,5 @@ By default, the script will run automatically when opening videos in `Y:` and `Z
 The target loudness is defined at the beginning of `main.lua`. The default setting is `i=-24.0:tp=-1.0:lra=50.0`.
 
 Since calculating md5 takes quite a long time, the filename of profiles are determined by the first 10 MB (could be modified in `main.lua`) of corresponding file.
+
+Since calculating true peak also takes a lot of time, `ebur128=framelog=verbose,volumedetect` is used instead of `loudnorm` to get the first-pass information. It seems that peak is used instead of true peak in this case, which may lead to a louder result.
