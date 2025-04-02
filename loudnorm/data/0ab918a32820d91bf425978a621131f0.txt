@@ -1,1 +1,0 @@
-measured_i=-27.1:measured_tp=-4.6:measured_lra=16.6:measured_thresh=-38.4
