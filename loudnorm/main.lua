@@ -63,9 +63,6 @@ local function create_profile(path, profile_path, ff_audio_index)
 end
 
 local function apply_loudnorm()
-    -- First, do a one-pass loudnorm
-    mp.set_property("af", "loudnorm=" .. target_loud)
-
     -- File path and profile path
     local path = mp.get_property("path")
 
@@ -119,6 +116,7 @@ local function apply_loudnorm()
     -- Check profile exist
     if loud_profile == nil then
         mp.osd_message("No existed loudnorm profile.")
+        mp.set_property("af", "loudnorm=" .. target_loud)
         create_profile(path, profile_path, ff_audio_index)
         loud_profile = io.open(profile_path, "r")
     end
@@ -130,6 +128,7 @@ local function apply_loudnorm()
         if not measured_loud:find(pattern) then
             loud_profile:close()
             mp.osd_message("Invalid loudnorm profile.")
+            mp.set_property("af", "loudnorm=" .. target_loud)
             create_profile(path, profile_path, ff_audio_index)
         end
     end
