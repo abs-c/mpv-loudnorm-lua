@@ -1,5 +1,5 @@
 -- main.lua
-local mp = require('mp')
+local mp = require("mp")
 local loudnorm_enabled = false
 local target_loud = "i=-24.0:tp=-1.0:lra=50.0:offset=0.0"
 
@@ -43,10 +43,10 @@ local function create_profile(path, profile_path, ff_audio_index)
     end
 
     -- Get formatted string for 2nd pass
-    local measured_i = summary:match('I%s*:%s*([%-%.%d]+)%s*LUFS')
-    local measured_tp = summary:match('max_volume%s*:%s*([%-%.%d]+)%s*dB')
-    local measured_lra = summary:match('LRA%s*:%s*([%-%.%d]+)%s*LU')
-    local measured_thresh = summary:match('Threshold%s*:%s*([%-%.%d]+)%s*LUFS.*Loudness range')
+    local measured_i = summary:match("I%s*:%s*([%-%.%d]+)%s*LUFS")
+    local measured_tp = summary:match("max_volume%s*:%s*([%-%.%d]+)%s*dB")
+    local measured_lra = summary:match("LRA%s*:%s*([%-%.%d]+)%s*LU")
+    local measured_thresh = summary:match("Threshold%s*:%s*([%-%.%d]+)%s*LUFS.*Loudness range")
 
     local formatted_string = string.format("measured_i=%s:measured_tp=%s:measured_lra=%s:measured_thresh=%s",
         measured_i, measured_tp, measured_lra, measured_thresh)
